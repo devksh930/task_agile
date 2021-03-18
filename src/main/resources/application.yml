@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    username: root
+    password: spring123
+    driver-class-name: com.mysql.jdbc.Driver
