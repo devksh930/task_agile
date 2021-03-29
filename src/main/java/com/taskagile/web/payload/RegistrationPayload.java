@@ -1,6 +1,6 @@
 package com.taskagile.web.payload;
 
-import com.taskagile.domain.model.user.RegistrationCommand;
+import com.taskagile.domain.application.commands.RegistrationCommand;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;

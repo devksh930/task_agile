@@ -1,4 +1,4 @@
-package com.taskagile.domain.model.user;
+package com.taskagile.domain.application.commands;
 
 
 public class RegistrationCommand {
