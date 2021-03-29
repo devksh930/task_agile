@@ -5,4 +5,5 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/task_agile?useSSL=false
 logging:
-  level: com.taskagile=DEBUG
+  level:
+    com.taskagile: debug

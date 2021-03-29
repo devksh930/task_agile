@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    username: root
+    password: spring123
+    url: jdbc:mysql://loclahost:3306/task_agile?useSSL=false

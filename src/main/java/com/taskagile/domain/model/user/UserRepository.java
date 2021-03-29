@@ -7,5 +7,4 @@ public interface UserRepository {
   User findByEmailAddress(String emailAddress);
 
   void save(User user);
-
 }
