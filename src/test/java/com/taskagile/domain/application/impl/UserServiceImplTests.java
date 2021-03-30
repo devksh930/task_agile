@@ -16,6 +16,7 @@ public class UserServiceImplTests {
   private RegistrationManagement registrationManagementMock;
   private DomainEventPublisher domainEventPublisherMock;
   private MailManager mailManagerMock;
+  private UserRepository userRepositoryMock;
   private UserServiceImpl instance;
 
   @Before
@@ -23,7 +24,9 @@ public class UserServiceImplTests {
     registrationManagementMock = mock(RegistrationManagement.class);
     domainEventPublisherMock = mock(DomainEventPublisher.class);
     mailManagerMock = mock(MailManager.class);
-    instance = new UserServiceImpl(registrationManagementMock, domainEventPublisherMock, mailManagerMock);
+    userRepositoryMock = mock(UserRepository.class);
+    instance = new UserServiceImpl(registrationManagementMock, domainEventPublisherMock,
+      mailManagerMock, userRepositoryMock);
   }
 
   @Test(expected = IllegalArgumentException.class)
