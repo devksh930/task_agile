@@ -114,20 +114,7 @@
               </arguments>
             </configuration>
           </execution>
-          <execution>
-            <id>font-end unit test</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <phase>prepare-package</phase>
-            <configuration>
-              <executable>npm</executable>
-              <arguments>
-                <argument>run</argument>
-                <argument>test:unit</argument>
-              </arguments>
-            </configuration>
-          </execution>
+       
           <execution>
             <id>font-end build package</id>
             <goals>
@@ -142,20 +129,7 @@
               </arguments>
             </configuration>
           </execution>
-          <execution>
-            <id>front-end e2e test</id>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <phase>integration-test</phase>
-            <configuration>
-              <executable>npm</executable>
-              <arguments>
-                <argument>run</argument>
-                <argument>test:e2e</argument>
-              </arguments>
-            </configuration>
-          </execution>
+        
         </executions>
         <configuration>
           <workingDirectory>${basedir}/front-end</workingDirectory>
