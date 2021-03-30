@@ -18,7 +18,6 @@ import javax.validation.Valid;
 public class RegistrationApiController {
 
   private UserService service;
-
   public RegistrationApiController(UserService service) {
     this.service = service;
   }
@@ -38,4 +37,5 @@ public class RegistrationApiController {
       return Result.failure(errorMessage);
     }
   }
+  
 }

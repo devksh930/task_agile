@@ -1,1 +1,5 @@
-{}
+{
+  "dependencies": {
+    "@vue/cli-plugin-e2e-nightwatch": "^4.5.12"
+  }
+}
