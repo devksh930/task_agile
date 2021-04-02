@@ -4,6 +4,18 @@ spring:
     password: spring123
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/task_agile?useSSL=false
+  freemarker:
+    template-loader-path: classpath:/mail-templates/
+  mail:
+    host: localhost
+    port: 1025
+    properties:
+      mail:
+        smtp:
+          auth: false
+# mail
+app:
+  mail-from: noreply@taskagile.com
 #logging:
 #  level:
 #    com.taskagile: debug
