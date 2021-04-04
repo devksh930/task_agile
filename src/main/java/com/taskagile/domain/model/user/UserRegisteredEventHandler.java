@@ -8,10 +8,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UserRegisteredEventHandler {
+
   private final static Logger log = LoggerFactory.getLogger(UserRegisteredEventHandler.class);
 
   @EventListener(UserRegisteredEvent.class)
-  public void handlerEvent(UserRegisteredEvent event) {
+  public void handleEvent(UserRegisteredEvent event) {
     log.debug("Handling `{}` registration event", event.getUser().getEmailAddress());
+    // This is only a demonstration of the domain event listener
   }
+
 }

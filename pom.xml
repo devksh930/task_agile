@@ -95,7 +95,12 @@
       <optional>true</optional>
     </dependency>
 
-
+<!-- SQL 쿼리 로깅 -->
+    <dependency>
+      <groupId>p6spy</groupId>
+      <artifactId>p6spy</artifactId>
+      <version>3.7.0</version>
+    </dependency>
   </dependencies>
 
 

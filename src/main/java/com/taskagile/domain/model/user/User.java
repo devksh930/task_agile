@@ -1,6 +1,5 @@
 package com.taskagile.domain.model.user;
 
-
 import com.taskagile.domain.common.model.AbstractBaseEntity;
 
 import javax.persistence.*;
@@ -36,11 +35,8 @@ public class User extends AbstractBaseEntity {
   @Column(name = "created_date", nullable = false)
   private Date createdDate;
 
-  public User() {
-  }
-
   /**
-   * Create new user during registration
+   * Create new user
    */
   public static User create(String username, String emailAddress, String password) {
     User user = new User();
@@ -53,8 +49,13 @@ public class User extends AbstractBaseEntity {
     return user;
   }
 
-  public Long getId() {
-    return id;
+  public void updateName(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  public UserId getId() {
+    return new UserId(id);
   }
 
   public String getUsername() {

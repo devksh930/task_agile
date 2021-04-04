@@ -13,7 +13,7 @@ public class SimpleUser implements UserDetails, Serializable {
 
   private static final long serialVersionUID = -7144174657188362966L;
 
-  private long userId;
+  private UserId userId;
   private String username;
   private String password;
 
@@ -23,7 +23,7 @@ public class SimpleUser implements UserDetails, Serializable {
     this.password = user.getPassword();
   }
 
-  public long getUserId() {
+  public UserId getUserId() {
     return userId;
   }
 
@@ -46,18 +46,22 @@ public class SimpleUser implements UserDetails, Serializable {
   public boolean isAccountNonExpired() {
     return true;
   }
+
   @Override
   public boolean isAccountNonLocked() {
     return true;
   }
+
   @Override
   public boolean isCredentialsNonExpired() {
     return true;
   }
+
   @Override
   public boolean isEnabled() {
     return true;
   }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
