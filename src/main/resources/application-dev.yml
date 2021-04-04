@@ -22,7 +22,10 @@ spring:
 # mailr
 app:
   mail-from: noreply@taskagile.com
-#logging:
-#  level:
-#    com.taskagile: debug
-#    org.springframework.security: debug
+logging:
+  level: 
+    com:
+      taskagile: debug
+    org:
+      springframework:
+        security: debug
