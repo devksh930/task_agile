@@ -6,5 +6,7 @@ public interface UserRepository {
 
   User findByEmailAddress(String emailAddress);
 
+  User findById(UserId userId);
+
   void save(User user);
 }

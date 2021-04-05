@@ -8,7 +8,7 @@ export default {
    */
   add (detail) {
     return new Promise((resolve, reject) => {
-      axios.post('/cards', detail).then(({ data }) => {
+      axios.post('/cards', detail).then(({data}) => {
         resolve(data)
       }).catch((error) => {
         reject(errorParser.parse(error))
@@ -17,7 +17,7 @@ export default {
   },
   changePositions (positionChanges) {
     return new Promise((resolve, reject) => {
-      axios.post('/cards/positions', positionChanges).then(({ data }) => {
+      axios.post('/cards/positions', positionChanges).then(({data}) => {
         resolve(data)
       }).catch((error) => {
         reject(errorParser.parse(error))

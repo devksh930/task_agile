@@ -7,21 +7,30 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class RegistrationPayload {
-  @Size(min = 2, max = 50, message = "이름은 2자에서 50자의 문자열만 허용합니다")
+
+  @Size(min = 2, max = 50, message = "Username must be between 2 and 50 characters")
   @NotNull
   private String username;
 
-  @Email(message = "유효한 이메일 주소여야 합니다.")
-  @Size(max = 100, message = "이메일 주소는 100문자를 초과할수 없습니다.")
+  @Email(message = "Email address should be valid")
+  @Size(max = 100, message = "Email address must not be more than 100 characters")
   @NotNull
   private String emailAddress;
 
-  @Size(min = 6, max = 30, message = "비밀번호는 6~30자의 문자열만 허용합니다.")
+  @Size(min = 1, max = 45, message = "First name must be between 1 and 45 characters")
+  @NotNull
+  private String firstName;
+
+  @Size(min = 1, max = 45, message = "Last name must be between 1 and 45 characters")
+  @NotNull
+  private String lastName;
+
+  @Size(min = 6, max = 30, message = "Password must be between 6 and 30 characters")
   @NotNull
   private String password;
 
   public RegistrationCommand toCommand() {
-    return new RegistrationCommand(this.username, this.emailAddress, this.password);
+    return new RegistrationCommand(this.username, this.emailAddress, this.firstName, this.lastName, this.password);
   }
 
   public String getUsername() {
@@ -38,6 +47,22 @@ public class RegistrationPayload {
 
   public void setEmailAddress(String emailAddress) {
     this.emailAddress = emailAddress;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
   public String getPassword() {

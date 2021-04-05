@@ -67,17 +67,17 @@ export default {
   },
   methods: {
     goHome () {
-      this.$router.push({ name: 'home' })
+      this.$router.push({name: 'home'})
     },
     openBoard (board) {
-      this.$router.push({ name: 'board', params: { boardId: board.id } })
+      this.$router.push({name: 'board', params: { boardId: board.id }})
     },
     signOut () {
       this.$rt.logout()
 
       meService.signOut().then(() => {
         this.$store.dispatch('logout')
-        this.$router.push({ name: 'login' })
+        this.$router.push({name: 'login'})
       }).catch(error => {
         notify.error(error.message)
       })

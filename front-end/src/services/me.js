@@ -8,7 +8,7 @@ export default {
    */
   getMyData () {
     return new Promise((resolve, reject) => {
-      axios.get('/me').then(({ data }) => {
+      axios.get('/me').then(({data}) => {
         resolve(data)
         eventBus.$emit('myDataFetched', data)
       }).catch((error) => {
@@ -18,7 +18,7 @@ export default {
   },
   signOut () {
     return new Promise((resolve, reject) => {
-      axios.post('/me/logout').then(({ data }) => {
+      axios.post('/me/logout').then(({data}) => {
         resolve(data)
       }).catch((error) => {
         reject(errorParser.parse(error))

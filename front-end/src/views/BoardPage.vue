@@ -41,21 +41,21 @@
                             @keydown.enter.prevent="addCard(cardList)" placeholder="Type card title here"></textarea>
                         </div>
                         <button type="submit" class="btn btn-sm btn-primary">Add</button>
-                        <button type="button" class="btn btn-sm btn-link btn-cancel" @click="closeAddCardForm(cardList)">취소</button>
+                        <button type="button" class="btn btn-sm btn-link btn-cancel" @click="closeAddCardForm(cardList)">Cancel</button>
                       </form>
                     </div>
                   </draggable>
-                  <div class="add-card-button" v-show="!cardList.cardForm.open" @click="openAddCardForm(cardList)">+ 카드 추가</div>
+                  <div class="add-card-button" v-show="!cardList.cardForm.open" @click="openAddCardForm(cardList)">+ Add a card</div>
                 </div>
               </div>
               <div class="list-wrapper add-list">
-                <div class="add-list-button" v-show="!addListForm.open" @click="openAddListForm()">+ 리스트 추가</div>
+                <div class="add-list-button" v-show="!addListForm.open" @click="openAddListForm()">+ Add a list</div>
                 <form @submit.prevent="addCardList()" v-show="addListForm.open" class="add-list-form">
                   <div class="form-group">
                     <input type="text" class="form-control" v-model="addListForm.name" id="cardListName" placeholder="Type list name here" />
                   </div>
                   <button type="submit" class="btn btn-sm btn-primary">Add List</button>
-                  <button type="button" class="btn btn-sm btn-link btn-cancel" @click="closeAddListForm()">취소</button>
+                  <button type="button" class="btn btn-sm btn-link btn-cancel" @click="closeAddListForm()">Cancel</button>
                 </form>
               </div>
             </draggable>

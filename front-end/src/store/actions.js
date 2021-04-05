@@ -10,10 +10,10 @@ export const getMyData = ({ commit }) => {
   })
 }
 
-export const addTeam = ({ commit }, team) => {
+export const addTeam = ({commit}, team) => {
   commit('addTeam', team)
 }
 
-export const addBoard = ({ commit }, board) => {
+export const addBoard = ({commit}, board) => {
   commit('addBoard', board)
 }

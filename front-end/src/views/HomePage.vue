@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     openBoard (board) {
-      this.$router.push({ name: 'board', params: { boardId: board.id } })
+      this.$router.push({name: 'board', params: {boardId: board.id}})
     },
     createBoard (team) {
       this.selectedTeamId = team ? team.id : 0
@@ -79,7 +79,7 @@ export default {
       $('#createTeamModal').modal('show')
     },
     onBoardCreated (boardId) {
-      this.$router.push({ name: 'board', params: { boardId: boardId } })
+      this.$router.push({name: 'board', params: {boardId: boardId}})
     }
   }
 }

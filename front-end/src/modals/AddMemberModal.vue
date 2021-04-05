@@ -4,7 +4,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">멤버 추가</h5>
+            <h5 class="modal-title">Add Member</h5>
             <button type="button" class="close" @click="close" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -19,8 +19,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">추가</button>
-            <button type="button" class="btn btn-default btn-cancel" @click="close">취소</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="button" class="btn btn-default btn-cancel" @click="close">Cancel</button>
           </div>
         </div>
       </div>

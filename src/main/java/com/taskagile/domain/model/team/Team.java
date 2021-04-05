@@ -6,9 +6,11 @@ import com.taskagile.domain.model.user.UserId;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
+
 @Entity
 @Table(name = "team")
 public class Team extends AbstractBaseEntity {
+
   private static final long serialVersionUID = -2264390861852998965L;
 
   @Id
@@ -28,6 +30,9 @@ public class Team extends AbstractBaseEntity {
   @Column(name = "created_date", nullable = false)
   private Date createdDate;
 
+  /**
+   * Create new team
+   */
   public static Team create(String name, UserId creatorId) {
     Team team = new Team();
     team.name = name;

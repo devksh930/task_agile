@@ -70,8 +70,8 @@ public class UserServiceImplTests {
   @Test
   public void loadUserByUsername_existUsername_shouldSucceed() throws IllegalAccessException {
     String existUsername = "ExistUsername";
-    User foundUser = User.create(existUsername, "user@taskagile.com", "EncryptedPassword!");
-    foundUser.updateName("Test", "User");
+    User foundUser = User.create(existUsername, "user@taskagile.com", "Test", "User",
+      "EncryptedPassword!");
     // Found user from the database should have id. And since no setter of
     // id is available in User, we have to write the value to it using reflection
     //
@@ -112,10 +112,12 @@ public class UserServiceImplTests {
     String username = "existing";
     String emailAddress = "sunny@taskagile.com";
     String password = "MyPassword!";
+    String firstName = "Sunny";
+    String lastName = "Hu";
     doThrow(UsernameExistsException.class).when(registrationManagementMock)
-      .register(username, emailAddress, password);
+      .register(username, emailAddress, firstName, lastName, password);
 
-    RegistrationCommand command = new RegistrationCommand(username, emailAddress, password);
+    RegistrationCommand command = new RegistrationCommand(username, emailAddress, firstName, lastName, password);
     instance.register(command);
   }
 
@@ -124,10 +126,12 @@ public class UserServiceImplTests {
     String username = "sunny";
     String emailAddress = "existing@taskagile.com";
     String password = "MyPassword!";
+    String firstName = "Sunny";
+    String lastName = "Hu";
     doThrow(EmailAddressExistsException.class).when(registrationManagementMock)
-      .register(username, emailAddress, password);
+      .register(username, emailAddress, firstName, lastName, password);
 
-    RegistrationCommand command = new RegistrationCommand(username, emailAddress, password);
+    RegistrationCommand command = new RegistrationCommand(username, emailAddress, firstName, lastName, password);
     instance.register(command);
   }
 
@@ -136,10 +140,12 @@ public class UserServiceImplTests {
     String username = "sunny";
     String emailAddress = "sunny@taskagile.com";
     String password = "MyPassword!";
-    User newUser = User.create(username, emailAddress, password);
-    when(registrationManagementMock.register(username, emailAddress, password))
+    String firstName = "Sunny";
+    String lastName = "Hu";
+    User newUser = User.create(username, emailAddress, firstName, lastName, password);
+    when(registrationManagementMock.register(username, emailAddress, firstName, lastName, password))
       .thenReturn(newUser);
-    RegistrationCommand command = new RegistrationCommand(username, emailAddress, password);
+    RegistrationCommand command = new RegistrationCommand(username, emailAddress, firstName, lastName, password);
 
     instance.register(command);
 

@@ -3,7 +3,7 @@ export default {
     return new Promise((resolve, reject) => {
       (detail.username === 'sunny' || detail.username === 'sunny@taskagile.com') &&
       detail.password === 'JestRocks!'
-        ? resolve({ result: 'success' })
+        ? resolve({result: 'success'})
         : reject(new Error('Invalid credentials'))
     })
   }

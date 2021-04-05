@@ -4,7 +4,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">보드 추가</h5>
+            <h5 class="modal-title">Create Board</h5>
             <button type="button" class="close" @click="close" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -12,21 +12,21 @@
           <div class="modal-body">
             <div v-show="errorMessage" class="alert alert-danger failed">{{ errorMessage }}</div>
             <div class="form-group">
-              <input type="text" class="form-control" id="boardNameInput" v-model="board.name" placeholder="보드 이름" maxlength="128">
+              <input type="text" class="form-control" id="boardNameInput" v-model="board.name" placeholder="Board name" maxlength="128">
               <div class="field-error" v-if="$v.board.name.$dirty">
                 <div class="error" v-if="!$v.board.name.required">Name is required</div>
               </div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" v-model="board.description" placeholder=" 보드 내용을 추가하세요"></textarea>
+              <textarea class="form-control" v-model="board.description" placeholder="Add board description here"></textarea>
               <div class="field-error" v-if="$v.board.description.$dirty">
                 <div class="error" v-if="!$v.board.description.required">Description is required</div>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">생성</button>
-            <button type="button" class="btn btn-default btn-cancel" @click="close">취소</button>
+            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="button" class="btn btn-default btn-cancel" @click="close">Cancel</button>
           </div>
         </div>
       </div>
